@@ -1,0 +1,23 @@
+# Maintainer: frap129 <joe@maples.dev>
+#
+pkgname=fakesudo
+pkgver=0.1
+pkgrel=1
+pkgdesc="A sudo wrapper that calls doas,and ignores some commonly used sudo args."
+arch=("any")
+url="https://github.com/frap129/pkgbuilds/main/fakesudo"
+depends=("doas" "bash")
+provides=("sudo")
+conflicts=("sudo")
+source=(
+  "sudo"
+  )
+sha256sums=(
+  'SKIP'
+)
+
+package() {
+	cd ${srcdir}
+	mkdir ${pkgdir}/usr/bin/ -p
+  install -Dm755 sudo ${pkgdir}/usr/bin/${pkdname}
+}

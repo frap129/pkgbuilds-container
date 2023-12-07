@@ -1,0 +1,9 @@
+#!/bin/bash
+args=("$@")
+for ((i=0; i<"${#args[@]}"; ++i)); do
+    case ${args[i]} in
+        -k) unset args[i];;
+        -A) unset args[i];;
+    esac
+done
+doas "${args[@]}"
