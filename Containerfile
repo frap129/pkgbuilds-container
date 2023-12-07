@@ -1,3 +1,4 @@
 FROM scratch as pkgbuilds
 
-COPY fakesudo fakesudo
+
+COPY fakesudo /pkgbuilds/fakesudo
